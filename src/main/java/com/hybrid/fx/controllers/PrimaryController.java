@@ -7,7 +7,11 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+
 import javax.inject.Inject;
 import org.controlsfx.control.action.Action;
 import org.controlsfx.control.action.ActionMap;
@@ -32,13 +36,28 @@ public class PrimaryController {
     @FXML
     private ResourceBundle resources;
     
+    @FXML
+    private Button home;
+    
+    @FXML
+    private WebView view;
+    WebEngine engine;
+    
+    @FXML
+    private TextField url;
+   
     private Action actionSignin;
     
     public void initialize() {
         ActionMap.register(this);
         actionSignin =  ActionMap.action("signin");
-        
+        engine = view.getEngine();
+        engine.load("http://localhost/chap03/Hello2.jsp");
         button.setOnAction(e -> viewManager.switchView("secondary"));
+        home.setOnAction(e -> engine.load("http://localhost/chap03/HelloServlet2"));
+        url.setOnAction(event -> {
+        	engine.load(url.getText());
+        });
         
     }
     
