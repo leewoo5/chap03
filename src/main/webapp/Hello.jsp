@@ -9,7 +9,9 @@
 </head>
 <body>
 <h1>Hello JSP</h1>
-현재시간 : <%= new Date() %>
-
+현재시간 : <%= new Date() %><br>
+name=<%=request.getParameter("name")%><br>
+address=<%=request.getParameter("address") %>
+HTTP METHOD = <%=request.getMethod() %>
 </body>
 </html>

@@ -52,9 +52,10 @@ public class PrimaryController {
         ActionMap.register(this);
         actionSignin =  ActionMap.action("signin");
         engine = view.getEngine();
-        engine.load("http://localhost/chap03/Hello2.jsp");
+        engine.load("http://localhost:8080/Hello.jsp");
+        url.setText(engine.getLocation());
         button.setOnAction(e -> viewManager.switchView("secondary"));
-        home.setOnAction(e -> engine.load("http://localhost/chap03/HelloServlet2"));
+        home.setOnAction(e -> engine.load("http://localhost:8080/Hello.jsp"));
         url.setOnAction(event -> {
         	engine.load(url.getText());
         });

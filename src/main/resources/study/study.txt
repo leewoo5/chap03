@@ -1,0 +1,43 @@
+
+//원격 저장소
+www.github.com
+echo "# FirstGradle" >> README.md
+
+//회사에서 작업
+>> cd FirstGradle 
+>> git init
+>>notepad .gitignore << .gradle, build, bin
+>> git add .
+>> git commit -m "first commit"
+>> git add README.md
+>> git remote add origin https://github.com/leewoo5/FirstGradle.git
+>> git remote -v(리모트 상태 체크)
+>> git push -u origin master
+
+//집에서 작업
+>>git clone https://github.com/leewoo5/FirstGradle.git
+>>notepad src\main\java\com\hybrid\MainApplication.java
+>>git add .
+>>git commit -m "10ea Hello"
+>>git push
+
+//회사에서 작업
+>>git pull
+>>git add .
+>>git commit -m "100ea Hello"
+>>git push
+
+//집에서 작업
+>>git pull
+>>notepad src\main\java\com\hybrid\MainApplication.java
+>>gir add .
+>>git commit -m "200ea Hello"
+>>git push
+>>
+
+
+
+
+
+
+
